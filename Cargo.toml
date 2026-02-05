@@ -1,0 +1,16 @@
+[package]
+name = "fonttool-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+ttf-parser = "0.17"
+anyhow = "1.0"
+byteorder = "1.4"
+
+[profile.release]
+lto = true
+opt-level = "z"
+panic = "abort"
+strip = true
