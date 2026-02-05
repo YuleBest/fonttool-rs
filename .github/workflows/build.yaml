@@ -39,7 +39,7 @@ jobs:
       shell: bash
       run: |
         # 换成你项目的名字
-        BIN_NAME="your_project_name"
+        BIN_NAME="fonttool-rs"
         if [ "${{ matrix.target }}" == "aarch64-linux-android" ]; then
           cargo ndk -t arm64-v8a build --release
         else
@@ -50,7 +50,7 @@ jobs:
       shell: bash
       run: |
         mkdir -p ./artifacts
-        BIN_NAME="your_project_name"
+        BIN_NAME="fonttool-rs"
         # 寻找生成的二进制文件
         if [ "${{ matrix.os }}" == "windows-latest" ]; then
           cp "target/${{ matrix.target }}/release/$BIN_NAME.exe" ./artifacts/
